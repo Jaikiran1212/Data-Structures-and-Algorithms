@@ -8,27 +8,28 @@ public class DLList {
         Node next;
         Node prev;
 
-        Node(int data) {
-            this.data = data;
+        Node(int d) {
+            data = d;
             next = null;
             prev = null;
         }
     }
 
-    public static Node create_dll(int n){
-        if( n <= 0){
+    public static Node create_dll(int n) {
+
+        if (n <= 0)
             return null;
-        }
 
         Node head = new Node(1);
         Node curr = head;
 
-        for(int i =2; i <=n; i++){
+        for (int i = 2; i <= n; i++) {
             Node newNode = new Node(i);
             curr.next = newNode;
             newNode.prev = curr;
             curr = newNode;
         }
+
         return head;
     }
 
@@ -55,14 +56,13 @@ public class DLList {
             return;
         }
 
-        Node current = head;
+        Node curr = head;
 
-        while (current.next != null) {
-            current = current.next;
-        }
+        while (curr.next != null)
+            curr = curr.next;
 
-        current.next = newNode;
-        newNode.prev = current;
+        curr.next = newNode;
+        newNode.prev = curr;
     }
 
     public void deleteFirst() {
@@ -89,44 +89,22 @@ public class DLList {
             return;
         }
 
-        Node current = head;
+        Node curr = head;
 
-        while (current.next != null) {
-            current = current.next;
-        }
+        while (curr.next != null)
+            curr = curr.next;
 
-        current.prev.next = null;
+        curr.prev.next = null;
     }
 
-    public void displayForward() {
+    public void printList() {
 
-        Node current = head;
+        Node curr = head;
 
-        while (current != null) {
-            System.out.print(current.data + " <-> ");
-            current = current.next;
+        while (curr != null) {
+            System.out.println(curr.data);
+            curr = curr.next;
         }
-
-        System.out.println("null");
-    }
-
-    public void displayBackward() {
-
-        if (head == null)
-            return;
-
-        Node current = head;
-
-        while (current.next != null) {
-            current = current.next;
-        }
-
-        while (current != null) {
-            System.out.print(current.data + " <-> ");
-            current = current.prev;
-        }
-
-        System.out.println("null");
     }
 
     public boolean isEmpty() {
@@ -136,11 +114,11 @@ public class DLList {
     public int size() {
 
         int count = 0;
-        Node current = head;
+        Node curr = head;
 
-        while (current != null) {
+        while (curr != null) {
             count++;
-            current = current.next;
+            curr = curr.next;
         }
 
         return count;
@@ -148,19 +126,62 @@ public class DLList {
 
     public int findNode(int data) {
 
-        Node current = head;
+        Node curr = head;
         int index = 0;
 
-        while (current != null) {
+        while (curr != null) {
 
-            if (current.data == data)
+            if (curr.data == data)
                 return index;
 
-            current = current.next;
+            curr = curr.next;
             index++;
         }
 
         return -1;
     }
 
+    public void reverseList() {
+
+        Node curr = head;
+        Node temp = null;
+
+        while (curr != null) {
+
+            temp = curr.prev;
+            curr.prev = curr.next;
+            curr.next = temp;
+            curr = curr.prev;
+        }
+
+        if (temp != null)
+            head = temp.prev;
+    }
+
+    public void deleteItem(int item) {
+
+        if (head == null)
+            return;
+
+        if (head.data == item) {
+            deleteFirst();
+            return;
+        }
+
+        Node curr = head.next;
+
+        while (curr != null) {
+
+            if (curr.data == item) {
+
+                if (curr.next != null)
+                    curr.next.prev = curr.prev;
+
+                curr.prev.next = curr.next;
+                return;
+            }
+
+            curr = curr.next;
+        }
+    }
 }

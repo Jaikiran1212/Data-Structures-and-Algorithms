@@ -32,45 +32,6 @@ public class SLList{
         return head;
     }
 
-
-    public static Node create_cdll(int n){
-        if(n <= 0){
-            return null;
-        }
-
-        Node head = new Node(1);
-        Node curr = head;
-
-        for(int i = 2; i <= n; i++){
-            Node newNode = new Node(i);
-            curr.next = newNode;
-            newNode.prev = curr;
-            curr = newNode;
-        }
-        curr.next = head;
-        head.prev = curr;
-        return head;
-
-    }
-
-        public static Node create_csll(int n){
-        if(n <= 0){
-            return null;
-        }
-
-        Node head = new Node(1);
-        Node curr = head;
-
-        for(int i = 2; i <= n; i++){
-            Node newNode = new Node(i);
-            curr.next = newNode;
-            curr = newNode;
-        }
-        curr.next = head;
-        return head;
-
-    }
-
     public void insertLast(int data){
         Node newNode = new Node(data);
 
@@ -155,5 +116,41 @@ public class SLList{
         }
         return -1;
 
+    }
+
+    public void reverseList(){
+        Node prev = null;
+        Node curr = head;
+        
+        while(curr != null){
+            Node nextNode = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextNode;
+        }
+        head = prev;
+    }
+
+    public void deleteItem(int item){
+        if(head == null){
+            return;
+        }
+        if(head != null && head.data == item){
+            head = head.next;
+            return;
+        }
+
+        Node prev = head;
+        Node curr = head.next;
+
+        while (curr != null){
+            if(curr.data == item){
+                prev.next = curr.next;
+                return;
+            }else{
+                prev = curr;
+                curr = curr.next;
+            }
+        }
     }
 }

@@ -32,22 +32,6 @@ public class SLList{
         return head;
     }
 
-    public static Node create_dll(int n){
-        if(n <= 0){
-            return null;
-        }
-
-        Node head = new Node (1);
-        Node curr = head;
-
-        for(int i = 2 ; i <= n; i++){
-            Node newNode = new Node(i);
-            curr.next = newNode;
-            newNode.prev = curr;
-            curr = newNode;
-        }
-        return head;
-    }
 
     public static Node create_cdll(int n){
         if(n <= 0){

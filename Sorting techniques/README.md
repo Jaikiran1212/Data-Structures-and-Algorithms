@@ -15,7 +15,6 @@ Java implementations of classic sorting algorithms, each done two ways:
 | `Selection_Sort_data.java` | Selection Sort | Data-swap based |
 | `Selection_Sort_node.java` | Selection Sort | Node-rearrangement based |
 
-> As more sorting algorithms are added (Merge Sort, Quick Sort, etc.), add a new row above following the same naming pattern.
 
 ## ▶️ Running
 

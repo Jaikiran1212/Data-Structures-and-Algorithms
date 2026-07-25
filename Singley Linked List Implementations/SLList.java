@@ -5,13 +5,86 @@ public class SLList{
     static class Node { 
   
         int data; 
-        Node next; 
+        Node next;
+        Node prev; 
 
         Node(int d) 
         { 
             data = d; 
-            next = null; 
+            next = null;
+            prev = null; 
         } 
+    }
+
+    public static Node create_sll(int n){
+        if(n <= 0){
+            return null;
+        }
+        
+        Node head = new Node(1);
+        Node curr = head;
+
+        for(int i = 2 ; i <= n ; i++){
+            Node newNode = new Node(i);
+            curr.next = newNode;
+            curr = newNode;
+        }
+        return head;
+    }
+
+    public static Node create_dll(int n){
+        if(n <= 0){
+            return null;
+        }
+
+        Node head = new Node (1);
+        Node curr = head;
+
+        for(int i = 2 ; i <= n; i++){
+            Node newNode = new Node(i);
+            curr.next = newNode;
+            newNode.prev = curr;
+            curr = newNode;
+        }
+        return head;
+    }
+
+    public static Node create_cdll(int n){
+        if(n <= 0){
+            return null;
+        }
+
+        Node head = new Node(1);
+        Node curr = head;
+
+        for(int i = 2; i <= n; i++){
+            Node newNode = new Node(i);
+            curr.next = newNode;
+            newNode.prev = curr;
+            curr = newNode;
+        }
+        curr.next = head;
+        head.prev = curr;
+        return head;
+
+    }
+
+        public static Node create_csll(int n){
+        if(n <= 0){
+            return null;
+        }
+
+        Node head = new Node(1);
+        Node curr = head;
+
+        for(int i = 2; i <= n; i++){
+            Node newNode = new Node(i);
+            curr.next = newNode;
+            curr = newNode;
+        }
+        curr.next = head;
+        return head;
+
     }
 
     public void insertLast(int data){

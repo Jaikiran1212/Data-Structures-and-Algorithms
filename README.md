@@ -6,7 +6,7 @@ A collection of Java implementations of common data structures and algorithms, o
 
 | Folder | Description |
 |---|---|
-| [`Singley Linked List Implementations/`](./Singley%20Linked%20List%20Implementations) | Singly linked list operations (insertion, traversal, etc.) |
+| [`Singly Linked List Implementations/`](./Singly%20Linked%20List%20Implementations) | Singly linked list operations (insertion, traversal, etc.) |
 | [`Sorting techniques/`](./Sorting%20techniques) | Sorting algorithms implemented on both arrays/plain data and linked list nodes |
 
 > More folders will be added here as the repo grows (e.g. Trees, Graphs, Stacks, Queues, Searching).

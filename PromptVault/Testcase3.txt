@@ -1,0 +1,28 @@
+INPUT:
+
+10
+A JK200 Skills Practice_knife_skills_quiz High
+D JK200
+REV
+A JK201 App Automate_recipe_scaler Low
+A JK202 skills Memorize_spice_blends High
+A JK203 Food Write_food_safety_report Medium
+S
+D JK201
+D JK202
+D JK203
+
+OUTPUT:
+
+Prompt JK200 added.
+Prompt JK200 deleted.
+PromptVault is empty.
+Prompt JK201 added.
+Prompt JK202 added.
+Prompt JK203 added.
+K202 skills Memorize_spice_blends High
+K203 Food Write_food_safety_report Medium
+K201 App Automate_recipe_scaler Low
+Prompt JK201 deleted.
+Prompt JK202 deleted.
+Prompt JK203 deleted.

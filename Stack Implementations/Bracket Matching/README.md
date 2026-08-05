@@ -1,14 +1,12 @@
-# Stack Implementations
+# Bracket Matching
 
-This folder contains implementations of the **Stack** data structure and its applications in multiple programming languages. The programs are written in a simple and beginner-friendly style for learning Data Structures and Algorithms (DSA).
+This folder contains implementations of the **Bracket Matching** problem using the **Stack** data structure in multiple programming languages. These programs demonstrate how stacks are used to validate balanced parentheses, braces, and brackets, following a simple and beginner-friendly approach for learning Data Structures and Algorithms (DSA).
+
 
 ## Folder Structure
 
 ```text
 Stack Implementations/
-│
-├── CPP.cpp
-│
 └── Bracket Matching/
     ├── Bracket_matching_c.c
     ├── Bracket_matching_c++.cpp
@@ -18,18 +16,7 @@ Stack Implementations/
 
 ## Programs Included
 
-### 1. Stack Implementation (C++)
-
-* Array-based stack implementation.
-* Operations:
-
-  * Push
-  * Pop
-  * Peek
-  * isEmpty
-  * Size
-
-### 2. Bracket Matching
+### 1. Bracket Matching
 
 Checks whether the brackets in an expression are balanced using a stack.
 
@@ -47,24 +34,6 @@ Available in:
 * Python
 
 ## Algorithms
-
-### Stack Operations
-
-* **Push**
-
-  * Inserts an element at the top of the stack.
-* **Pop**
-
-  * Removes the top element from the stack.
-* **Peek**
-
-  * Returns the top element without removing it.
-* **isEmpty**
-
-  * Checks whether the stack is empty.
-* **Size**
-
-  * Returns the number of elements currently in the stack.
 
 ### Bracket Matching Algorithm
 

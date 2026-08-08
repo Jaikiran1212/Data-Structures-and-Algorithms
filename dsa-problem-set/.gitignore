@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Java
+*.class
+*.jar
+*.log
+out/
+target/
+
+# C++
+*.o
+*.obj
+*.out
+*.exe
+*.exe~
+add_two_numbers
+playlist_manager
+mirror_stack
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp

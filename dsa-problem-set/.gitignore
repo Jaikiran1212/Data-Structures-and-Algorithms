@@ -18,9 +18,9 @@ target/
 *.out
 *.exe
 *.exe~
-add_two_numbers
-playlist_manager
-mirror_stack
+*/playlist_manager/playlist_manager
+*/add_two_numbers_linked_list/add_two_numbers_linked_list
+*/mirror_stack_using_queue/mirror_stack_using_queue
 
 # OS / editor
 .DS_Store

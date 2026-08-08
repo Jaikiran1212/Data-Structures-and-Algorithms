@@ -1,6 +1,6 @@
 # DSA Problem Set — Linked Lists, Stacks & Queues
 
-Implementations of three data structures problems, each written in
+Implementations of five data structures problems, each written in
 Python, Java, and C++. Every source file lives in its own folder next
 to a README explaining what it does, how to run it, and (where
 relevant) what was fixed to get it working.
@@ -16,8 +16,14 @@ relevant) what was fixed to get it working.
 │   ├── playlist_manager/
 │   │   ├── playlist_manager.py
 │   │   └── README.md
-│   └── mirror_stack_using_queue/
-│       ├── mirror_stack_using_queue.py
+│   ├── mirror_stack_using_queue/
+│   │   ├── mirror_stack_using_queue.py
+│   │   └── README.md
+│   ├── palindrome_check_stack/
+│   │   ├── palindrome_check_stack.py
+│   │   └── README.md
+│   └── palindrome_check_two_stacks/
+│       ├── palindrome_check_two_stacks.py
 │       └── README.md
 ├── java/
 │   ├── add_two_numbers_linked_list/
@@ -26,8 +32,14 @@ relevant) what was fixed to get it working.
 │   ├── playlist_manager/
 │   │   ├── PlaylistManager.java
 │   │   └── README.md
-│   └── mirror_stack_using_queue/
-│       ├── MirrorStackUsingQueue.java
+│   ├── mirror_stack_using_queue/
+│   │   ├── MirrorStackUsingQueue.java
+│   │   └── README.md
+│   ├── palindrome_check_stack/
+│   │   ├── PalindromeCheckStack.java
+│   │   └── README.md
+│   └── palindrome_check_two_stacks/
+│       ├── PalindromeCheckTwoStacks.java
 │       └── README.md
 ├── cpp/
 │   ├── add_two_numbers_linked_list/
@@ -36,8 +48,14 @@ relevant) what was fixed to get it working.
 │   ├── playlist_manager/
 │   │   ├── playlist_manager.cpp
 │   │   └── README.md
-│   └── mirror_stack_using_queue/
-│       ├── mirror_stack_using_queue.cpp
+│   ├── mirror_stack_using_queue/
+│   │   ├── mirror_stack_using_queue.cpp
+│   │   └── README.md
+│   ├── palindrome_check_stack/
+│   │   ├── palindrome_check_stack.cpp
+│   │   └── README.md
+│   └── palindrome_check_two_stacks/
+│       ├── palindrome_check_two_stacks.cpp
 │       └── README.md
 ├── .gitignore
 └── README.md
@@ -52,6 +70,12 @@ relevant) what was fixed to get it working.
    tracking.
 3. **Mirror a Stack Using a Queue** — reverses a stack's contents using
    only an auxiliary queue as extra storage.
+4. **Palindrome Check (Single Stack)** — checks if a string is a
+   palindrome by pushing it onto a stack and comparing popped
+   characters (reverse order) against the original (forward order).
+5. **Palindrome Check (Two Stacks)** — checks if a string is a
+   palindrome by splitting it across two stacks and comparing them
+   element by element.
 
 See each folder's own README for exact run instructions, input/output
 format, and examples.
@@ -75,6 +99,14 @@ README; in short:
 - **Mirror Stack logic (all three)**: the original logic corrupted the
   stack (5 elements in, 10 out) instead of mirroring it. All three
   versions now use the minimal, correct form of the same approach.
+- **C++ / Palindrome Check (Single Stack)**: the file was empty —
+  implemented from scratch, same approach as Java/Python.
+- **Java / Palindrome Check (Single Stack)**: had no `main` method to
+  run it — added one calling the same example strings as Python.
+- **C++ / Palindrome Check (Two Stacks)**: didn't compile —
+  `stack.pop()` was used as if it returned a value; fixed to use
+  `.top()` then `.pop()`, matching the pattern already used elsewhere
+  in the same file.
 
 Everything else — variable names, control flow, class layout, and the
 overall approach for each problem — is unchanged from the original

@@ -1,8 +1,8 @@
 # Dancing Links: Sudoku & Constraint Solver
 
-A Java implementation of Donald Knuth's **Dancing Links (DLX)** technique for solving
+Java, C++ and Python implementations of Donald Knuth's **Dancing Links (DLX)** technique for solving
 **exact cover** problems, with a **Sudoku solver** built on top of it.
-Built as a DSA case study. Uses only raw arrays (no collections or fancy abstractions).
+Built as a DSA case study. All versions use only plain arrays/lists (no collections, STL containers or node objects).
 
 ## The problem: Exact Cover
 
@@ -39,28 +39,57 @@ Clue cells only get one row (their given digit); empty cells get nine.
 ## Project structure
 
 ```
-dancing-links/
-├── src/
-│   ├── DancingLinks.java   # generic exact cover solver (DLX)
-│   ├── SudokuSolver.java   # Sudoku -> exact cover -> Sudoku
-│   └── Main.java           # demo and test cases
+Dancing Links - Sudoku and Constraint Solver/
+├── java/
+│   └── src/
+│       ├── DancingLinks.java   # generic exact cover solver (DLX)
+│       ├── SudokuSolver.java   # Sudoku -> exact cover -> Sudoku
+│       └── Main.java           # demo and test cases
+├── cpp/
+│   ├── DancingLinks.h / .cpp   # generic exact cover solver (DLX)
+│   ├── SudokuSolver.h / .cpp   # Sudoku -> exact cover -> Sudoku
+│   └── main.cpp                # demo and test cases
+├── python/
+│   ├── dancing_links.py        # generic exact cover solver (DLX)
+│   ├── sudoku_solver.py        # Sudoku -> exact cover -> Sudoku
+│   └── main.py                 # demo and test cases
 ├── README.md
 └── .gitignore
 ```
 
+All three versions use the same algorithm and the same test cases, and print the same results.
+
 ## How to run
 
-Requires JDK 8 or newer.
+### Java (JDK 8 or newer)
 
 ```bash
+cd java
 javac -d out src/*.java
 java -cp out Main
+```
+
+### C++ (g++ with C++11 or newer)
+
+```bash
+cd cpp
+g++ -std=c++11 -O2 *.cpp -o dlx
+./dlx
+```
+
+### Python (3.6 or newer)
+
+```bash
+cd python
+python3 main.py
 ```
 
 Solve your own puzzle (81 characters, `0` or `.` for empty cells):
 
 ```bash
 java -cp out Main 530070000600195000098000060800060003400803001700020006060000280000419005000080079
+./dlx 530070000600195000098000060800060003400803001700020006060000280000419005000080079
+python3 main.py 530070000600195000098000060800060003400803001700020006060000280000419005000080079
 ```
 
 ## Test cases included

@@ -1,8 +1,8 @@
 # Graph Data Structures & Algorithms (C++)
 
-A comprehensive collection of **Graph Data Structure** implementations in C++, focusing on low-level memory efficiency, pointer manipulation, and foundational representation paradigms.
+A comprehensive collection of **Graph Data Structure** implementations in C++, focusing on low-level memory efficiency, pointer manipulation, representation paradigms, and fundamental traversal algorithms.
 
-All implementations avoid external STL containers (`std::vector`, `std::list`) in favor of direct dynamic arrays and linked lists, with full destructors to guarantee zero memory leaks.
+All implementations avoid external STL containers (`std::vector`, `std::list`, `std::stack`, `std::queue`) in favor of direct dynamic arrays and linked lists, with full destructors to guarantee zero memory leaks.
 
 ---
 
@@ -12,11 +12,14 @@ All implementations avoid external STL containers (`std::vector`, `std::list`) i
 Graphs/
 ├── Graph_implementation_ADT.cpp   # Full Graph ADT with insertion, deletion & search
 ├── README.md                      # Primary graphs documentation
-└── Graph_representation/          # Core representation techniques
-    ├── adjacency_matrix_representation.cpp   # 2D array representation (O(V^2))
-    ├── adjacency_list_representation.cpp     # Linked lists array representation (O(V + E))
-    ├── edge_list_representaion.cpp           # Edge array representation (O(E))
-    └── README.md                             # Comparative analysis & benchmarks
+├── Graph_representation/          # Core representation techniques
+│   ├── adjacency_matrix_representation.cpp   # 2D array representation (O(V^2))
+│   ├── adjacency_list_representation.cpp     # Linked lists array representation (O(V + E))
+│   ├── edge_list_representaion.cpp           # Edge array representation (O(E))
+│   └── README.md                             # Comparative analysis & benchmarks
+└── Graph_traversals/              # Search & traversal algorithms
+    ├── BFS_and_DFS.cpp                       # Iterative BFS and DFS using custom buffers
+    └── README.md                             # Traversal guide & algorithmic comparison
 ```
 
 ---
@@ -31,6 +34,11 @@ A dedicated comparative module benchmarking the three standard graph storage for
 - **Adjacency Matrix**: Fast $O(1)$ lookups, optimal for dense graphs.
 - **Adjacency List**: Space-efficient $O(V + E)$, optimal for sparse graphs.
 - **Edge List**: Compact $O(E)$ edge storage, optimal for algorithms like Kruskal's or Bellman-Ford.
+
+### 3. Graph Traversals ([`Graph_traversals/`](./Graph_traversals))
+Iterative implementations of the two foundational graph exploration algorithms:
+- **Depth-First Search (DFS)**: Deep branch exploration utilizing a dynamic LIFO stack.
+- **Breadth-First Search (BFS)**: Radial level-order exploration utilizing a dynamic FIFO queue.
 
 ---
 
@@ -85,7 +93,6 @@ g++ -std=c++11 Graph_implementation_ADT.cpp -o graph_adt
 ```
 
 ### Graph Representations
-Navigate to [`Graph_representation/`](./Graph_representation) or compile directly:
 ```bash
 cd Graph_representation
 g++ -std=c++11 adjacency_matrix_representation.cpp -o adj_mat
@@ -93,6 +100,14 @@ g++ -std=c++11 adjacency_list_representation.cpp -o adj_list
 g++ -std=c++11 edge_list_representaion.cpp -o edge_list
 ```
 See [`Graph_representation/README.md`](./Graph_representation/README.md) for detailed analysis and run guides.
+
+### Graph Traversals (BFS & DFS)
+```bash
+cd Graph_traversals
+g++ -std=c++11 BFS_and_DFS.cpp -o bfs_dfs
+./bfs_dfs
+```
+See [`Graph_traversals/README.md`](./Graph_traversals/README.md) for traversal mechanics and tracing.
 
 ---
 

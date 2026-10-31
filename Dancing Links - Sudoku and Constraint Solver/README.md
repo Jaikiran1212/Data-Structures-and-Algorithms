@@ -41,10 +41,9 @@ Clue cells only get one row (their given digit); empty cells get nine.
 ```
 Dancing Links - Sudoku and Constraint Solver/
 ├── java/
-│   └── src/
-│       ├── DancingLinks.java   # generic exact cover solver (DLX)
-│       ├── SudokuSolver.java   # Sudoku -> exact cover -> Sudoku
-│       └── Main.java           # demo and test cases
+│   ├── DancingLinks.java       # generic exact cover solver (DLX)
+│   ├── SudokuSolver.java       # Sudoku -> exact cover -> Sudoku
+│   └── Main.java               # demo and test cases
 ├── cpp/
 │   ├── DancingLinks.h / .cpp   # generic exact cover solver (DLX)
 │   ├── SudokuSolver.h / .cpp   # Sudoku -> exact cover -> Sudoku
@@ -65,7 +64,7 @@ All three versions use the same algorithm and the same test cases, and print the
 
 ```bash
 cd java
-javac -d out src/*.java
+javac -d out *.java
 java -cp out Main
 ```
 

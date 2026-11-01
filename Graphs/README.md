@@ -1,8 +1,8 @@
 # Graph Data Structures & Algorithms (C++)
 
-A comprehensive collection of **Graph Data Structure** implementations in C++, focusing on low-level memory efficiency, pointer manipulation, representation paradigms, fundamental traversal algorithms, and supporting priority structures.
+A comprehensive collection of **Graph Data Structure** implementations in C++, focusing on low-level memory efficiency, pointer manipulation, representation paradigms, fundamental traversal algorithms, supporting priority structures, and Minimum Spanning Tree (MST) algorithms.
 
-All implementations avoid external STL containers (`std::vector`, `std::list`, `std::stack`, `std::queue`, `std::priority_queue`) in favor of direct dynamic arrays and linked lists, with full destructors to guarantee zero memory leaks.
+All implementations avoid external STL containers (`std::vector`, `std::list`, `std::stack`, `std::queue`, `std::priority_queue`, `std::set`) in favor of direct dynamic arrays and linked lists, with full destructors to guarantee zero memory leaks.
 
 ---
 
@@ -20,12 +20,17 @@ Graphs/
 ├── Graph_traversals/              # Search & traversal algorithms
 │   ├── BFS_and_DFS.cpp                       # Iterative BFS and DFS using custom buffers
 │   └── README.md                             # Traversal guide & algorithmic comparison
-└── Supporting_Data_Structures/    # Specialized structures for advanced algorithms
-    ├── DSU.h                                 # Disjoint Set Union (Path Compression + Rank)
-    ├── MinHeap.h                             # Array-based Edge Min-Heap (Kruskal)
-    ├── PriorityQueue.h                       # Array-based Vertex Min-Priority Queue (Dijkstra)
-    ├── main.cpp                              # Test harness & demonstration
-    └── README.md                             # Algorithmic use cases & analysis
+├── Supporting_Data_Structures/    # Specialized structures for advanced algorithms
+│   ├── DSU.h                                 # Disjoint Set Union (Path Compression + Rank)
+│   ├── MinHeap.h                             # Array-based Edge Min-Heap (Kruskal)
+│   ├── PriorityQueue.h                       # Array-based Vertex Min-Priority Queue (Dijkstra)
+│   ├── main.cpp                              # Test harness & demonstration
+│   └── README.md                             # Algorithmic use cases & analysis
+└── MST_Algorithms/                # Minimum Spanning Tree algorithms
+    ├── Kruskal's_algorithm.cpp               # Kruskal's MST using Min-Heap and DSU
+    ├── Prim's_algorithm.cpp                  # Prim's MST using Adjacency List and Priority Queue
+    ├── Boruvka's_algorithm.cpp               # Boruvka's MST using Edge List and DSU
+    └── README.md                             # Comparative analysis & theoretical guide
 ```
 
 ---
@@ -51,6 +56,12 @@ Auxiliary data structures designed to power advanced greedy and shortest-path gr
 - **DSU**: Nearly $O(1)$ amortized subset merging and cycle detection for Kruskal's MST.
 - **MinHeap**: $O(\log E)$ edge extraction for MST edge processing.
 - **PriorityQueue**: $O(\log V)$ vertex extraction for Dijkstra's and Prim's algorithms.
+
+### 5. Minimum Spanning Tree Algorithms ([`MST_Algorithms/`](./MST_Algorithms))
+Complete implementations of the three classic greedy MST algorithms:
+- **Kruskal's Algorithm**: Global edge sorting via Min-Heap with DSU cycle avoidance ($O(E \log E)$).
+- **Prim's Algorithm**: Vertex-centric tree expansion via custom Priority Queue ($O((V + E) \log V)$).
+- **Borůvka's Algorithm**: Multi-component parallel edge selection via DSU ($O(E \log V)$).
 
 ---
 
@@ -128,6 +139,15 @@ g++ -std=c++11 main.cpp -o supporting_demo
 ./supporting_demo
 ```
 See [`Supporting_Data_Structures/README.md`](./Supporting_Data_Structures/README.md) for individual component breakdowns.
+
+### Minimum Spanning Tree (MST) Algorithms
+```bash
+cd MST_Algorithms
+g++ -std=c++11 "Kruskal's_algorithm.cpp" -o kruskal
+g++ -std=c++11 "Prim's_algorithm.cpp" -o prim
+g++ -std=c++11 "Boruvka's_algorithm.cpp" -o boruvka
+```
+See [`MST_Algorithms/README.md`](./MST_Algorithms/README.md) for algorithm comparisons and traces.
 
 ---
 

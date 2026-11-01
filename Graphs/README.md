@@ -1,8 +1,8 @@
 # Graph Data Structures & Algorithms (C++)
 
-A comprehensive collection of **Graph Data Structure** implementations in C++, focusing on low-level memory efficiency, pointer manipulation, representation paradigms, and fundamental traversal algorithms.
+A comprehensive collection of **Graph Data Structure** implementations in C++, focusing on low-level memory efficiency, pointer manipulation, representation paradigms, fundamental traversal algorithms, and supporting priority structures.
 
-All implementations avoid external STL containers (`std::vector`, `std::list`, `std::stack`, `std::queue`) in favor of direct dynamic arrays and linked lists, with full destructors to guarantee zero memory leaks.
+All implementations avoid external STL containers (`std::vector`, `std::list`, `std::stack`, `std::queue`, `std::priority_queue`) in favor of direct dynamic arrays and linked lists, with full destructors to guarantee zero memory leaks.
 
 ---
 
@@ -17,9 +17,15 @@ Graphs/
 │   ├── adjacency_list_representation.cpp     # Linked lists array representation (O(V + E))
 │   ├── edge_list_representaion.cpp           # Edge array representation (O(E))
 │   └── README.md                             # Comparative analysis & benchmarks
-└── Graph_traversals/              # Search & traversal algorithms
-    ├── BFS_and_DFS.cpp                       # Iterative BFS and DFS using custom buffers
-    └── README.md                             # Traversal guide & algorithmic comparison
+├── Graph_traversals/              # Search & traversal algorithms
+│   ├── BFS_and_DFS.cpp                       # Iterative BFS and DFS using custom buffers
+│   └── README.md                             # Traversal guide & algorithmic comparison
+└── Supporting_Data_Structures/    # Specialized structures for advanced algorithms
+    ├── DSU.h                                 # Disjoint Set Union (Path Compression + Rank)
+    ├── MinHeap.h                             # Array-based Edge Min-Heap (Kruskal)
+    ├── PriorityQueue.h                       # Array-based Vertex Min-Priority Queue (Dijkstra)
+    ├── main.cpp                              # Test harness & demonstration
+    └── README.md                             # Algorithmic use cases & analysis
 ```
 
 ---
@@ -39,6 +45,12 @@ A dedicated comparative module benchmarking the three standard graph storage for
 Iterative implementations of the two foundational graph exploration algorithms:
 - **Depth-First Search (DFS)**: Deep branch exploration utilizing a dynamic LIFO stack.
 - **Breadth-First Search (BFS)**: Radial level-order exploration utilizing a dynamic FIFO queue.
+
+### 4. Supporting Data Structures ([`Supporting_Data_Structures/`](./Supporting_Data_Structures))
+Auxiliary data structures designed to power advanced greedy and shortest-path graph algorithms:
+- **DSU**: Nearly $O(1)$ amortized subset merging and cycle detection for Kruskal's MST.
+- **MinHeap**: $O(\log E)$ edge extraction for MST edge processing.
+- **PriorityQueue**: $O(\log V)$ vertex extraction for Dijkstra's and Prim's algorithms.
 
 ---
 
@@ -108,6 +120,14 @@ g++ -std=c++11 BFS_and_DFS.cpp -o bfs_dfs
 ./bfs_dfs
 ```
 See [`Graph_traversals/README.md`](./Graph_traversals/README.md) for traversal mechanics and tracing.
+
+### Supporting Data Structures (DSU, MinHeap, PriorityQueue)
+```bash
+cd Supporting_Data_Structures
+g++ -std=c++11 main.cpp -o supporting_demo
+./supporting_demo
+```
+See [`Supporting_Data_Structures/README.md`](./Supporting_Data_Structures/README.md) for individual component breakdowns.
 
 ---
 

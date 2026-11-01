@@ -16,7 +16,7 @@ Every implementation emphasizes foundational computer science principles: zero r
 | [`Dancing Links - Sudoku and Constraint Solver/`](./Dancing%20Links%20-%20Sudoku%20and%20Constraint%20Solver) | C++, Java, Python | Donald Knuth's Dancing Links (Algorithm X) for exact cover problems and high-speed 9x9 Sudoku solving. |
 | [`Doubly Linked List Implementations/`](./Doubly%20Linked%20List%20Implementations) | Java | Custom doubly linked list ADT featuring bidirectional pointer management and in-place reversal. |
 | [`dsa-problem-set/`](./dsa-problem-set) | C++, Java, Python | 5 classic algorithmic problems implemented across 3 languages (Add Two Numbers, Playlist Manager, Stack Mirroring, and Palindrome Validation). |
-| [`Graphs/`](./Graphs) | C++ | Low-level Undirected Weighted Graph ADT, storage representations (Matrix, List, Edge List), and iterative BFS & DFS traversals. |
+| [`Graphs/`](./Graphs) | C++ | Low-level Undirected Weighted Graph ADT, storage representations, BFS/DFS traversals, and supporting structures (DSU, MinHeap, PriorityQueue). |
 | [`Linked List Memory Manager/`](./Linked%20List%20Memory%20Manager) | Java | Operating system dynamic memory manager simulation (`malloc`, `write`, `delete`, `copy`) using custom linked list memory blocks. |
 | [`PromptVault/`](./PromptVault) | Java | AI prompt history management system utilizing a custom doubly linked list with priority sorting. |
 | [`Singly Linked List Implementations/`](./Singly%20Linked%20List%20Implementations) | Java | Foundational singly linked list ADT with insertion, deletion, iterative 3-pointer reversal, and search. |

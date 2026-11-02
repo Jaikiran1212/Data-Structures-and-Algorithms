@@ -11,6 +11,7 @@ Every implementation emphasizes foundational computer science principles: zero r
 | Topic / Folder | Primary Languages | Description |
 |---|---|---|
 | [`Binary Tree/`](./Binary%20Tree) | C++, Java, Python | Complete binary tree template with custom queue level-order insertion, BFS/DFS traversals, node/leaf counters, and height calculation. |
+| [`AVL Tree/`](./AVL%20Tree) | C++ | Self-balancing binary search tree with insertion, deletion, search, and demonstrations of all four AVL rotation cases. |
 | [`binary-tree-paths/`](./binary-tree-paths) | C++17, CMake | Optimized DFS backtracking solution for LeetCode #257 with memory-efficient string resizing and unit test assertions. |
 | [`Circular Linked List Implementations/`](./Circular%20Linked%20List%20Implementations) | Java | Circular singly linked list ADT with cyclical pointer traversals, insertion, deletion, and search. |
 | [`Dancing Links - Sudoku and Constraint Solver/`](./Dancing%20Links%20-%20Sudoku%20and%20Constraint%20Solver) | C++, Java, Python | Donald Knuth's Dancing Links (Algorithm X) for exact cover problems and high-speed 9x9 Sudoku solving. |

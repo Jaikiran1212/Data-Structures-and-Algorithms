@@ -225,7 +225,6 @@ int main() {
     graph.addEdge(0, 3, 5, 2);   // Edge (0 - 3) weight 5
     graph.addEdge(1, 3, 15, 3);  // Edge (1 - 3) weight 15
     graph.addEdge(2, 3, 4, 4);   // Edge (2 - 3) weight 4
-
     // Run Boruvka's algorithm:
     // Expected output edges: (0-3: 5), (0-1: 10), (2-3: 4) -> Total weight: 19
     graph.boruvkaMST();

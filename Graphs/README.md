@@ -19,6 +19,8 @@ Graphs/
 │   └── README.md                             # Comparative analysis & benchmarks
 ├── Graph_traversals/              # Search & traversal algorithms
 │   ├── BFS_and_DFS.cpp                       # Iterative BFS and DFS using custom buffers
+│   ├── python/
+│   │   └── BFS_and_DFS.py                    # Python iterative BFS and DFS
 │   └── README.md                             # Traversal guide & algorithmic comparison
 ├── Supporting_Data_Structures/    # Specialized structures for advanced algorithms
 │   ├── DSU.h                                 # Disjoint Set Union (Path Compression + Rank)
@@ -50,6 +52,7 @@ A dedicated comparative module benchmarking the three standard graph storage for
 Iterative implementations of the two foundational graph exploration algorithms:
 - **Depth-First Search (DFS)**: Deep branch exploration utilizing a dynamic LIFO stack.
 - **Breadth-First Search (BFS)**: Radial level-order exploration utilizing a dynamic FIFO queue.
+- Python equivalents are available in [`Graph_traversals/python/`](./Graph_traversals/python).
 
 ### 4. Supporting Data Structures ([`Supporting_Data_Structures/`](./Supporting_Data_Structures))
 Auxiliary data structures designed to power advanced greedy and shortest-path graph algorithms:

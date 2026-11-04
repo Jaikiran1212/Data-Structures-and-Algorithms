@@ -1,6 +1,6 @@
-# Graph Traversals: BFS & DFS (C++)
+# Graph Traversals: BFS & DFS
 
-A low-level implementation of the two foundational graph traversal algorithms — **Breadth-First Search (BFS)** and **Depth-First Search (DFS)** — on an undirected graph in C++.
+A low-level C++ implementation and a Python implementation of the two foundational graph traversal algorithms — **Breadth-First Search (BFS)** and **Depth-First Search (DFS)** — on an undirected graph.
 
 Implemented strictly from first principles without relying on STL containers (`std::stack`, `std::queue`, `std::vector`), using custom dynamic array-based stack and queue buffers and manual dynamic linked list adjacency lists.
 
@@ -11,8 +11,12 @@ Implemented strictly from first principles without relying on STL containers (`s
 ```text
 Graph_traversals/
 ├── BFS_and_DFS.cpp     # Complete Graph class with iterative BFS & DFS
+├── python/
+│   └── BFS_and_DFS.py  # Python Graph class with iterative BFS & DFS
 └── README.md           # Documentation, algorithmic comparison & run guide
 ```
+
+The Python version uses a list-based adjacency list, a list as the DFS stack, and `collections.deque` as the BFS queue. It returns each traversal as a list of visited vertices.
 
 ---
 
@@ -75,11 +79,21 @@ Because edges are prepended to the linked lists at insertion, the adjacency list
 
 ## ▶️ Compilation & Execution
 
+### C++
+
 Compile and run using `g++` (C++11 or later):
 
 ```bash
 g++ -std=c++11 BFS_and_DFS.cpp -o bfs_dfs
 ./bfs_dfs
+```
+
+### Python
+
+Run from the `Graph_traversals` directory:
+
+```bash
+python3 python/BFS_and_DFS.py
 ```
 
 ### 📤 Sample Output

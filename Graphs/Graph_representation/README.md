@@ -1,11 +1,11 @@
-# Graph Representations (C++)
+# Graph Representations (C++ & Python)
 
-This directory demonstrates the three primary data structures used to store and manipulate **Weighted Undirected Graphs** in C++ from first principles:
+This directory demonstrates the three primary data structures used to store and manipulate **Weighted Undirected Graphs** in C++ (from first principles) and Python:
 1. **Adjacency Matrix** ($O(V^2)$ space)
 2. **Adjacency List** ($O(V + E)$ space)
 3. **Edge List** ($O(E)$ space)
 
-Each representation is built with raw dynamic pointers without external STL containers (`std::vector`, `std::list`), featuring full destructors to guarantee zero memory leaks.
+The C++ representations are built with raw dynamic pointers without external STL containers (`std::vector`, `std::list`), featuring full destructors to guarantee zero memory leaks. The Python versions provide modern, type-annotated object-oriented equivalents adhering to the same algorithmic paradigms.
 
 ---
 
@@ -13,9 +13,15 @@ Each representation is built with raw dynamic pointers without external STL cont
 
 ```text
 Graph_representation/
-├── adjacency_matrix_representation.cpp   # 2D array representation
-├── adjacency_list_representation.cpp     # Array of linked lists representation
-├── edge_list_representaion.cpp           # Array of edge structures representation
+├── adjacency_matrix_representation.cpp   # C++ 2D array representation
+├── adjacency_list_representation.cpp     # C++ Array of linked lists representation
+├── edge_list_representaion.cpp           # C++ Array of edge structures representation
+├── python/                               # Python representations
+│   ├── __init__.py                       # Module initialization
+│   ├── adjacency_matrix_representation.py# Python 2D matrix representation
+│   ├── adjacency_list_representation.py  # Python linked list representation
+│   ├── edge_list_representation.py       # Python Edge list representation
+│   └── README.md                         # Python-specific documentation & run guide
 └── README.md                             # Comparative analysis & run guide
 ```
 
@@ -88,9 +94,11 @@ Index [2]: 1 - 3 : 30
 
 ## ▶️ Compilation & Execution
 
+### C++
+
 Compile and run using `g++` (C++11 or later):
 
-### 1. Adjacency Matrix
+#### 1. Adjacency Matrix
 ```bash
 g++ -std=c++11 adjacency_matrix_representation.cpp -o adj_matrix
 ./adj_matrix
@@ -103,7 +111,7 @@ g++ -std=c++11 adjacency_matrix_representation.cpp -o adj_matrix
 0 30 0 0 
 ```
 
-### 2. Adjacency List
+#### 2. Adjacency List
 ```bash
 g++ -std=c++11 adjacency_list_representation.cpp -o adj_list
 ./adj_list
@@ -116,7 +124,7 @@ g++ -std=c++11 adjacency_list_representation.cpp -o adj_list
 3: (1,30) 
 ```
 
-### 3. Edge List
+#### 3. Edge List
 ```bash
 g++ -std=c++11 edge_list_representaion.cpp -o edge_list
 ./edge_list
@@ -127,6 +135,25 @@ g++ -std=c++11 edge_list_representaion.cpp -o edge_list
 0 - 2 : 20
 1 - 3 : 30
 ```
+
+---
+
+### Python
+
+Execute directly from the `Graph_representation` directory:
+
+```bash
+# 1. Adjacency Matrix
+python3 python/adjacency_matrix_representation.py
+
+# 2. Adjacency List
+python3 python/adjacency_list_representation.py
+
+# 3. Edge List
+python3 python/edge_list_representation.py
+```
+
+Outputs match the C++ console results identically. See [python/README.md](python/README.md) for detailed Python documentation.
 
 ---
 

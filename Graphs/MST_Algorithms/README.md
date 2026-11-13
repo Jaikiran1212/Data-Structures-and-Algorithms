@@ -1,11 +1,11 @@
-# Minimum Spanning Tree (MST) Algorithms (C++)
+# Minimum Spanning Tree (MST) Algorithms (C++ & Python)
 
-A comprehensive collection of the three classic **Minimum Spanning Tree (MST)** algorithms implemented from first principles in C++:
+A comprehensive collection of the three classic **Minimum Spanning Tree (MST)** algorithms implemented from first principles in C++ and Python:
 1. **Kruskal's Algorithm** ($O(E \log E)$)
 2. **Prim's Algorithm** ($O((V + E) \log V)$)
 3. **Borůvka's Algorithm** ($O(E \log V)$)
 
-Consistent with this repository's architectural guidelines, all implementations avoid standard library abstractions (`std::priority_queue`, `std::vector`, `std::set`) in favor of custom arrays, custom binary heaps, custom linked lists, and Disjoint Set Union (DSU) structures with explicit RAII destructors.
+Consistent with this repository's architectural guidelines, all implementations avoid standard library abstractions (`std::priority_queue`, `std::vector`, `std::set`, Python `heapq`) in favor of custom arrays, custom binary heaps, custom linked lists, and Disjoint Set Union (DSU) structures.
 
 ---
 
@@ -13,9 +13,15 @@ Consistent with this repository's architectural guidelines, all implementations 
 
 ```text
 MST_Algorithms/
-├── Kruskal's_algorithm.cpp   # Edge-centric greedy MST using Min-Heap and DSU
-├── Prim's_algorithm.cpp      # Vertex-centric greedy MST using Adjacency List and Priority Queue
-├── Boruvka's_algorithm.cpp   # Component-centric parallel MST using Edge List and DSU
+├── Kruskal's_algorithm.cpp   # Edge-centric greedy MST using Min-Heap and DSU (C++)
+├── Prim's_algorithm.cpp      # Vertex-centric greedy MST using Adjacency List and Priority Queue (C++)
+├── Boruvka's_algorithm.cpp   # Component-centric parallel MST using Edge List and DSU (C++)
+├── python/                   # Python implementations
+│   ├── __init__.py           # Package initializer
+│   ├── kruskals_algorithm.py # Kruskal's algorithm implementation
+│   ├── prims_algorithm.py    # Prim's algorithm implementation
+│   ├── boruvkas_algorithm.py # Borůvka's algorithm implementation
+│   └── README.md             # Python-specific documentation & run guide
 └── README.md                 # Comparative analysis, theoretical foundations & run guide
 ```
 
@@ -71,9 +77,11 @@ $$\text{Weight}(T) = \sum_{e \in T} w(e) \quad \text{is minimal}$$
 
 ## ▶️ Compilation & Execution
 
+### C++
+
 Compile and run each algorithm using `g++` (C++11 or later):
 
-### 1. Kruskal's Algorithm
+#### 1. Kruskal's Algorithm
 ```bash
 g++ -std=c++11 "Kruskal's_algorithm.cpp" -o kruskal
 ./kruskal
@@ -87,7 +95,7 @@ MST edges:
 Total MST weight: 19
 ```
 
-### 2. Prim's Algorithm
+#### 2. Prim's Algorithm
 ```bash
 g++ -std=c++11 "Prim's_algorithm.cpp" -o prim
 ./prim
@@ -101,7 +109,7 @@ g++ -std=c++11 "Prim's_algorithm.cpp" -o prim
 Total MST weight: 16
 ```
 
-### 3. Borůvka's Algorithm
+#### 3. Borůvka's Algorithm
 ```bash
 g++ -std=c++11 "Boruvka's_algorithm.cpp" -o boruvka
 ./boruvka
@@ -114,6 +122,25 @@ MST edges:
 2 - 3 : 4
 Total MST weight: 19
 ```
+
+---
+
+### Python
+
+Execute directly from the `MST_Algorithms` directory:
+
+```bash
+# 1. Kruskal's Algorithm
+python3 python/kruskals_algorithm.py
+
+# 2. Prim's Algorithm
+python3 python/prims_algorithm.py
+
+# 3. Borůvka's Algorithm
+python3 python/boruvkas_algorithm.py
+```
+
+Outputs match the C++ console results identically. See [python/README.md](python/README.md) for detailed Python documentation.
 
 ---
 
